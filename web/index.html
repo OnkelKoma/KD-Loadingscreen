@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <div id="app" class="is-loading">
+        <!-- Slides -->
+        <div id="stage" class="stage"></div>
+
+        <!-- Overlays -->
+        <div class="shade shade--bottom"></div>
+        <div class="shade shade--left"></div>
+        <div class="shade shade--top"></div>
+        <div class="vignette"></div>
+        <div class="grain"></div>
+        <div class="letterbox letterbox--top"></div>
+        <div class="letterbox letterbox--bottom"></div>
+
+        <!-- Top bar -->
+        <header class="top reveal" style="--d: .15s">
+            <div class="brand">
+                <div class="brand__badge" id="badge"></div>
+                <div class="brand__text">
+                    <span class="brand__name" id="brandName"></span>
+                    <span class="brand__online" id="online" hidden>
+                        <i class="pulse"></i><span id="onlineText"></span>
+                    </span>
+                </div>
+            </div>
+            <nav class="actions" id="actions"></nav>
+        </header>
+
+        <!-- Hero -->
+        <main class="hero">
+            <p class="hero__welcome reveal" id="welcome" style="--d: .35s"></p>
+            <h1 class="hero__title reveal" id="title" style="--d: .5s"></h1>
+            <p class="hero__tagline reveal" id="tagline" style="--d: .65s"></p>
+
+            <section class="tip reveal" id="tip" style="--d: .85s">
+                <div class="tip__head">
+                    <span class="tip__icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z"/></svg>
+                    </span>
+                    <span class="tip__title" id="tipTitle"></span>
+                    <span class="tip__count" id="tipCount"></span>
+                </div>
+                <p class="tip__text" id="tipText"></p>
+                <div class="tip__timer"><i id="tipTimer"></i></div>
+            </section>
+        </main>
+
+        <!-- Slide caption -->
+        <aside class="caption reveal" style="--d: .7s">
+            <div class="caption__index"><span id="capIndex">01</span><em>/</em><span id="capTotal">06</span></div>
+            <div class="caption__body">
+                <span class="caption__title" id="capTitle"></span>
+                <span class="caption__sub" id="capSub"></span>
+            </div>
+            <div class="dots" id="dots"></div>
+        </aside>
+
+        <!-- Progress -->
+        <footer class="bottom reveal" style="--d: 1s">
+            <div class="progress__meta">
+                <span class="progress__status" id="status">Connecting to server</span>
+                <span class="progress__pct"><span id="pct">0</span>%</span>
+            </div>
+            <div class="progress">
+                <div class="progress__fill" id="fill"><i class="progress__glow"></i></div>
+            </div>
+            <div class="credit" id="credit">
+                Made by <a data-url="https://komadev.dk">Koma Development</a>
+            </div>
+        </footer>
+    </div>
+
+    <audio id="music" loop preload="auto"></audio>
+    <script src="app.js"></script>
+</body>
+</html>
